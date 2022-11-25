@@ -8,8 +8,13 @@ export class AppController {
         private readonly apiService: AppService
     ) {}
 
-    @Get()
+    @Get("/index")
     getHello() : string {
         return this.apiService.getHello();
     }
+    @Get('/welcome')
+    getWelcome(): string{
+        return this.apiService.getWelcome()
+    }
+
 }
