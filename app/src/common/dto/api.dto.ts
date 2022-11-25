@@ -1,10 +1,34 @@
-// export class responseObject {
-    
-// }
+import { IsEmail, IsNotEmpty, IsNumber, IsString } from "class-validator";
+export class insertUserObject {
+    @IsNotEmpty()
+    @IsEmail()
+    @IsString()
+    emailId: string;
 
-// export class deleteUser {
-   
-// }
+    @IsNotEmpty()
+    @IsString()
+    firstName: string;
 
-// export class getUser {
-// }
+    @IsNotEmpty()
+    @IsString()
+    lastName: string;
+
+    @IsNotEmpty()
+    zipCode: string;
+}
+export class responseObject {
+    status: string;
+    message: string;
+}
+export class deleteUser {
+    @IsEmail()
+    @IsNotEmpty()
+    @IsString()
+    emailId: string;
+}
+
+export class getUser {
+    status: string;
+    message: string;
+    data?: object;
+}
