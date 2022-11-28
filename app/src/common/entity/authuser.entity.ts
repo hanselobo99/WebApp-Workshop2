@@ -16,4 +16,7 @@ export class UserEntity {
 
     @Column({ name: "zip_code" })
     zipCode: string;
+
+    @Column({name:"user_password"})
+    userPassword:string;
 }

@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
-import { insertUserObject, responseObject } from 'src/common/dto/api.dto';
+import {insertUserObject, LoginDto, responseObject} from 'src/common/dto/api.dto';
 import { UserEntity } from 'src/common/entity/authuser.entity';
 import { ApiService } from './api.service';
 
@@ -44,6 +44,11 @@ export class ApiController {
     @Get('search-user')
     findUser (@Query('name') name: any) {
         return this.apiService.findUser(name);
+    }
+
+    @Post("login")
+    login(@Body() login:LoginDto){
+        return this.apiService.login(login);
     }
 
 }
